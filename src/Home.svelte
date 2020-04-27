@@ -1,12 +1,15 @@
 <div class="home">
   <h1 class="app-title">Svelte Note</h1>
   <NoteList notes={userNotes}></NoteList>
+  <Button><Label>Default</Label></Button>
+  <Button variant="raised" class="button-shaped-round"><Label>Default</Label></Button>
   <button class="add" on:click={() => push('/add')}>+新しいノート</button>
 </div>
 
 <script>
   import { push } from 'svelte-spa-router';
   import NoteList from './components/NoteList.svelte';
+  import Button, {Group, GroupItem, Label, Icon} from '@smui/button';
 
   const userNotes = [
     { title: 'テストノート', content: 'これはテストです！' },
