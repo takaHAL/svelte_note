@@ -1,17 +1,26 @@
 <script>
-	import Home from './Home.svelte';
+  import Home from './pages/Home.svelte';
+  import Router from 'svelte-spa-router'
+  import Add from './pages/Add.svelte';
+  import Edit from './pages/Edit.svelte';
+
+  const routes = {
+    '/': Home,
+    '/add': Add,
+    '/edit/:id': Edit,
+    '*': Home
+  };
 </script>
 
 <main>
-	<Home></Home>
+	<Router routes={routes}></Router>
 </main>
 
 <style>
 	main {
 		background-color: rgb(255, 251, 246);
 		padding: 2em;
-		width: 100%;
 		height: 100%;
-		overflow-y: auto;
+		overflow-y: scroll;
 	}
 </style>

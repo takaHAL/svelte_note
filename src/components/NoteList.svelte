@@ -1,6 +1,6 @@
 <script>
   import { push } from 'svelte-spa-router'
-  export let notes;
+  export let notes; // props
 </script>
 
 <div class="note">
