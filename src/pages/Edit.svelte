@@ -55,8 +55,13 @@
   .flexor-content {
     flex-basis: 0;
     flex-grow: 1;
-    height: 80%;
+    height: 80vh;
     overflow: auto;
+    -ms-overflow-style: none;    /* IE, Edge 対応 */
+    scrollbar-width: none;       /* Firefox 対応 */
+  }
+  .flexor-content::-webkit-scrollbar {  /* Chrome, Safari 対応 */
+    display:none;
   }
 
 </style>

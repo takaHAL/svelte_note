@@ -24,10 +24,7 @@
 </main>
 
 <style>
-	main {
-		background-color: rgb(255, 251, 246);
-		height: 100%;
-  }
+
   .top-app-bar-container {
     height: 100%;
     width: 100%;
