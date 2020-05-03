@@ -1,31 +1,32 @@
 <script>
-  import { push } from 'svelte-spa-router';
   import NoteList from '../components/NoteList.svelte';
-  import { loadNotes } from '../lib/storage'
+  import { loadNotes } from '../lib/storage';
+  import AddButton from '../components/CircleButton.svelte';
+  import TopAppBar from '../components/TopAppBar.svelte';
   const userNotes = loadNotes();
 </script>
 
-<div class="home">
-  <h1 class="app-title">ノート</h1>
-  <NoteList notes={userNotes}></NoteList>
-  <button class="add" on:click={() => push('/add')}>+新しいノート</button>
+<div>
+  <TopAppBar></TopAppBar>
+  <div class="flexor-content">
+    <NoteList notes={userNotes}></NoteList>
+  </div>
+  <div class="add-button">
+    <AddButton></AddButton>
+  </div>
 </div>
 
 <style>
-	.app-title {
-		margin-bottom: 1em;
-	}
+  .add-button {
+    position: fixed;
+    right: 25px;
+    bottom: 50px;
+  }
+  .flexor-content {
+    flex-basis: 0;
+    flex-grow: 1;
+    height: 80%;
+    overflow: auto;
+  }
 
-	.add {
-		display: block;
-		background-color: rgb(75, 168, 51);
-		border: none;
-		box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
-		color: white;
-		font-size: 1.5em;
-		width: 100%;
-		padding: 0.5em 0;
-		margin: 1em 0;
-		cursor: pointer;
-	}
 </style>

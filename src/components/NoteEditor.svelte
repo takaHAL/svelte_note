@@ -2,7 +2,6 @@
   export let title;
   export let content;
 </script>
-
 <div class="editor">
   <input class="title" placeholder="タイトル" bind:value={title}>
   <textarea class="content" placeholder="本文" bind:value={content}></textarea>

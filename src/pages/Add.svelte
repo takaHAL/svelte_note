@@ -2,6 +2,7 @@
   import { push } from 'svelte-spa-router';
   import NoteEditor from '../components/NoteEditor.svelte';
   import { addNote } from '../lib/storage';
+  import TopAppBar from '../components/TopAppBar.svelte';
 
   let title = '新しいノート';
   let content = '';
@@ -11,11 +12,13 @@
     push('/');
   };
 </script>
-
-<div class="add">
-  <NoteEditor bind:title={title} bind:content={content}></NoteEditor>
-  <div class="button-container">
-    <button class="save" on:click={onSave} disabled={!title || !content}>保存</button>
+<div>
+  <TopAppBar menuIcon='arrow_back_ios' backLink='/'></TopAppBar>
+  <div class="add flexor-content">
+    <NoteEditor bind:title={title} bind:content={content}></NoteEditor>
+    <div class="button-container">
+      <button class="save" on:click={onSave} disabled={!title || !content}>保存</button>
+    </div>
   </div>
 </div>
 
@@ -23,7 +26,7 @@
   .add {
     display: flex;
     flex-direction: column;
-    height: 80%;
+    height: 0%;
   }
 
   .button-container {
@@ -44,5 +47,11 @@
   .save:disabled {
     opacity: 0.3;
     cursor: auto;
+  }
+  .flexor-content {
+    flex-basis: 0;
+    flex-grow: 1;
+    height: 80%;
+    overflow: auto;
   }
 </style>

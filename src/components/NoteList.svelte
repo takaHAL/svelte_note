@@ -15,6 +15,7 @@
 <style>
   .note {
     color: rgb(63, 62, 60);
+    margin: 1em;
   }
 
   .card {
