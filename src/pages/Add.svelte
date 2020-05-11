@@ -18,7 +18,7 @@
   <div class="add flexor-content">
     <NoteEditor bind:title={title} bind:content={content}></NoteEditor>
     <div class="add-button">
-      <SaveButton iconName="save_alt" eventMethod={onSave}  disabled={!title || !content}></SaveButton>
+      <SaveButton iconName="save_alt" eventMethod={onSave} disabled={!title || !content}></SaveButton>
     </div>
   </div>
 </div>
@@ -45,4 +45,5 @@
   .flexor-content::-webkit-scrollbar {  /* Chrome, Safari 対応 */
     display:none;
   }
+
 </style>
