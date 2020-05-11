@@ -4,8 +4,13 @@
   import FormField from '@smui/form-field';
 
   export let route = '/add';
+  export let iconName;
+  export let disabled = false;
+  export let eventMethod = function() {
+    push(route)
+  }
 </script>
 
-<Fab color="primary" on:click={() => push(route)}>
-  <Icon class="material-icons">add</Icon>
+<Fab color="primary" on:click={eventMethod} disabled={disabled}>
+  <Icon class="material-icons">{iconName}</Icon>
 </Fab>

@@ -12,7 +12,7 @@
     <NoteList notes={userNotes}></NoteList>
   </div>
   <div class="add-button">
-    <AddButton></AddButton>
+    <AddButton iconName="add"></AddButton>
   </div>
 </div>
 

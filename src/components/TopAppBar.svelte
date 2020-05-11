@@ -18,7 +18,7 @@
   <Row>
     <Section>
         <IconButton class="material-icons" on:click={() => push(backLink)}>{menuIcon}</IconButton>
-        <Title on:click={() => push('/')}>練習ページ</Title>
+        <Title on:click={() => push('/')}>初めてのSvelte</Title>
     </Section>
   </Row>
 </TopAppBar>
