@@ -11,6 +11,13 @@
   }
 </script>
 
-<Fab color="primary" on:click={eventMethod} disabled={disabled}>
+<Fab color="primary" class="material_circle_button" on:click={eventMethod} disabled={disabled}>
   <Icon class="material-icons">{iconName}</Icon>
 </Fab>
+
+<style>
+  :global(.material_circle_button[disabled]) {
+    pointer-events: none;
+    opacity: 0.6;
+  }
+</style>

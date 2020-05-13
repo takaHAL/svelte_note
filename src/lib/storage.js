@@ -21,3 +21,10 @@ export const overwriteNote = (index, note) => {
   newNotes[index] = note;
   saveNotes(newNotes);
 };
+
+export const deleteNote = (index) => {
+  const currentNotes = loadNotes();
+  const newNotes = [...currentNotes];
+  newNotes.splice(index, 1);
+  saveNotes(newNotes);
+};

@@ -2,7 +2,7 @@
   import { push } from 'svelte-spa-router';
   import NoteEditor from '../components/NoteEditor.svelte';
   import TopAppBar from '../components/TopAppBar.svelte';
-  import { loadNotes, overwriteNote } from '../lib/storage';
+  import { loadNotes, overwriteNote, deleteNote } from '../lib/storage';
   import SaveButton from '../components/CircleButton.svelte';
   export let params = {};
 
@@ -10,14 +10,25 @@
 
   let title = note.title;
   let content = note.content;
+  const appBarSettings = {
+    leftIcon: 'arrow_back_ios',
+    backLink: '/',
+    rightIcon: 'delete'
+  }
 
   const onSave = () =>  {
     overwriteNote(params.id, {title, content});
     push('/');
   };
+  const onDelete = () => {
+    if(confirm("削除しますか？")) {
+        deleteNote(params.id)
+        push('/')
+    }
+  }
 </script>
 <div>
-  <TopAppBar menuIcon='arrow_back_ios' backLink='/'></TopAppBar>
+  <TopAppBar eventMethod={onDelete} appBarSettings={appBarSettings}></TopAppBar>
   <div class="add flexor-content">
     <NoteEditor bind:title={title} bind:content={content}></NoteEditor>
     <div class="add-button">

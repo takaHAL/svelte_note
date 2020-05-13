@@ -16,6 +16,7 @@
     "@smui/form-field": "^1.0.0-beta.21",
     "@smui/icon-button": "^1.0.0-beta.21",
     "@smui/list": "^1.0.0-beta.21",
+    "@smui/textfield": "^1.0.0-beta.21",
     "@smui/top-app-bar": "^1.0.0-beta.21",
     "node-sass": "^4.14.0",
     "rollup": "^1.20.0",

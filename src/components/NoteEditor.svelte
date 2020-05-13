@@ -1,10 +1,15 @@
 <script>
+  import Textfield, {Input, Textarea} from '@smui/textfield';
   export let title;
   export let content;
 </script>
 <div class="editor">
-  <input class="title" placeholder="タイトル" bind:value={title}>
-  <textarea class="content" placeholder="本文" bind:value={content}></textarea>
+  <div class="editor-title">
+    <Textfield bind:value={title} label="タイトル" input$aria-controls="helper-text-standard-a" input$aria-describedby="helper-text-standard-a" />
+  </div>
+  <div class="editor-content">
+    <Textfield textarea bind:value={content} input$maxlength="140" input$aria-controls="helper-text-textarea" input$aria-describedby="helper-text-textarea" />
+  </div>
 </div>
 
 <style>
@@ -14,27 +19,25 @@
     height: 100%;
   }
 
-  .title {
+  .editor-title {
     display: block;
-    background-color: transparent;
-    border: none;
-    border-left: 2px solid rgb(200, 86, 20);
-    font-size: 2em;
-    padding: 0.5rem 1rem;
-    margin-bottom: 0.3em;
-    width: 100%;
+    margin: 0 auto 20px;
   }
 
-  .content {
+  .editor-content {
     flex: 1;
     display: block;
-    background-color: transparent;
-    border: none;
-    border-left: 2px solid rgb(200, 86, 20);
-    font-size: 1.1em;
-    padding: 1rem 1rem;
-    margin-bottom: 0.3em;
-    width: 100%;
+    margin: 0 auto;
+  }
+  :global(.mdc-text-field) {
+    width: 90vw;
+    font-size: 2em;
+  }
+
+  :global(.mdc-text-field--textarea .mdc-text-field__input) {
     resize: none;
+    letter-spacing: 0.3em;
+    width: 90vw !important;
+    height: 50vh !important;
   }
 </style>

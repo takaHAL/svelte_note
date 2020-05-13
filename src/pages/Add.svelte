@@ -5,8 +5,13 @@
   import TopAppBar from '../components/TopAppBar.svelte';
   import SaveButton from '../components/CircleButton.svelte';
 
-  let title = '新しいノート';
+  let title = '新規メモ';
   let content = '';
+  const appBarSettings = {
+    leftIcon: 'arrow_back_ios',
+    backLink: '/',
+    rightIcon: ''
+  }
 
   const onSave = () =>  {
     addNote({title, content});
@@ -14,7 +19,7 @@
   };
 </script>
 <div>
-  <TopAppBar menuIcon='arrow_back_ios' backLink='/'></TopAppBar>
+  <TopAppBar appBarSettings={appBarSettings}></TopAppBar>
   <div class="add flexor-content">
     <NoteEditor bind:title={title} bind:content={content}></NoteEditor>
     <div class="add-button">
