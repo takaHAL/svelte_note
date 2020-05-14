@@ -6,8 +6,6 @@
   let prominent = false;
   let dense = false;
   let secondaryColor = false;
-  export let menuIcon = 'menu';
-  export let backLink = '';
   export let appBarSettings = {
     leftIcon: 'menu',
     backLink: '',
@@ -22,7 +20,7 @@
 <TopAppBar variant="static" {prominent} {dense} color={secondaryColor ? 'secondary' : 'primary'}>
   <Row>
     <Section>
-        <IconButton class="material-icons" on:click={() => push(appBarSettings.backLink)}>{appBarSettings.leftIcon}</IconButton>
+        <IconButton class="material-icons" on:click={() => handleClick(appBarSettings.backLink)}>{appBarSettings.leftIcon}</IconButton>
         <Title on:click={() => push('/')}>初めてのSvelte</Title>
     </Section>
     {#if appBarSettings.rightIcon != ''}
